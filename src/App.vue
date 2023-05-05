@@ -17,7 +17,8 @@ export default{
       axios.get(store.apiUrl)
       .then(result => {
         store.resultArray = result.data.data;
-        console.log(this.resultArray);
+        store.resultArray = store.resultArray.slice(0, 100)
+        console.log(store.resultArray);
       })
     }
   },
@@ -32,7 +33,7 @@ export default{
 
   <Header />
 
-  <Main />
+  <Main @newGetApi="getApi" />
 
 </template>
 

@@ -4,7 +4,7 @@ export default{
     name: 'Cards',
     props:{
         name: String,
-        img: String,
+        img: Object,
         species: String,
     },
 
@@ -17,29 +17,19 @@ export default{
 </script>
 
 <template>
-    <div class="container">
 
-        <div class="dc-container">
-            
             <div class="dc-card">
-                <img src="img" alt="">
+                <img :src="img" alt="">
                 <div class="text">
                     <h5>{{ name }}</h5>
                     <span>{{ species }}</span>
                 </div>
             </div>
 
-           
-        </div>
-    </div>
-  
 </template>
 
 <style lang="scss">
- .dc-container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+ 
     .dc-card{
         width: calc(100% / 5);
         padding: 0 20px;
@@ -58,7 +48,7 @@ export default{
             }
         }
     }
-}
+
 
 
 </style>
